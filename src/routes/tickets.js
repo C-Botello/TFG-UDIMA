@@ -43,14 +43,6 @@ router.put('/ticket/:id', isAuth, async (req, res) => {
   res.json(status);
 });
 
-//MANEJAR NOTIFICACIONES DE UN TICKET
-router.put('/ticket/notification/:id', isAuth, async (req, res) => {
-  const ticket = await Ticket.findById(req.params.id);
-  const status = !ticket.status;
-
-  await Ticket.findByIdAndUpdate(req.params.id, {status});
-});
-
 //OBTENER RESPUESTAS DE UN TICKET CONCRETO
 router.get('/replies/:id', isAuth, async (req, res) => {
   const replies = await Reply.find({idTicket: req.params.id}).lean().sort({date: 1});
