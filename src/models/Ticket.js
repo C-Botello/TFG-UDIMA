@@ -9,7 +9,6 @@ const TicketSchema = new Schema({
   description: {type: String, required: true},
   user: {type: String},
   idUser: {type: String},
-  numReplies: {type: Number, default: 0},
   date: {type: Date, default: Date.now}
 })
 

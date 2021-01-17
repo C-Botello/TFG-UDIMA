@@ -43,7 +43,7 @@ router.put('/ticket/:id', isAuth, async (req, res) => {
   res.json(status);
 });
 
-//TODO MANEJAR NOTIFICACIONES DE UN TICKET
+//MANEJAR NOTIFICACIONES DE UN TICKET
 router.put('/ticket/notification/:id', isAuth, async (req, res) => {
   const ticket = await Ticket.findById(req.params.id);
   const status = !ticket.status;
@@ -73,14 +73,5 @@ router.post('/replies/:id', isAuth, async (req, res) => {
   newReply.idTicket = req.params.id;
 
   await newReply.save();
-
-  //Conteo de notificaciones para las respuestas
-  if(req.user.rol!="Usuario"){
-    const ticket = await Ticket.findById(req.params.id).lean();
-    const numReplies = ticket.numReplies+1
-
-    await Ticket.findByIdAndUpdate(req.params.id, {numReplies}).lean();
-  }
-});
 
 module.exports = router;

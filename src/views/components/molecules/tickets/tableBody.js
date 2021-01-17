@@ -32,7 +32,7 @@ export default function Tbody(props) {
                       :(<Trow replies={props.replies} id={ticket._id} tittle={ticket.speciality} size="35%"/>)
                   }
                 <Trow replies={props.replies} id={ticket._id} tittle={moment(ticket.date).format('DD/MM/YYYY')} size="10%"/>
-                <Trow replies={props.replies} id={ticket._id} tittle={<h5><span className="badge badge-primary float-right mr-n2 mt-1">{ ticket.numReplies === 0? "" : ticket.numReplies }</span></h5>} className="sticky2" size="1%"/>
+                <Trow replies={props.replies} id={ticket._id} tittle={<h5><span className="badge badge-primary float-right mr-n2 mt-1">{ ""} className="sticky2" size="1%"/>
                 <Trow replies={props.replies} id={ticket._id} tittle={ticket._id == props.id? <FaAngleDoubleRight className="arrow-myTicket mt-n1"/>:<FaAngleRight className="arrow mt-n1"/> }  className="sticky" size="1%"/>
               </TableRow>
             </Zoom>
