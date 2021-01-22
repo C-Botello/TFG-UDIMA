@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 //CONEXIÓN BASE DE DATOS
-mongoose.connect('mongodb://192.168.1.5/HelpDeskApp', {
+const URL = 'mongodb://192.168.0.115/HelpDeskApp';
+mongoose.connect(URL, {
   useUnifiedTopology: true,
   useCreateIndex: true,
   useNewUrlParser: true,

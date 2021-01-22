@@ -65,5 +65,6 @@ router.post('/replies/:id', isAuth, async (req, res) => {
   newReply.idTicket = req.params.id;
 
   await newReply.save();
+});
 
 module.exports = router;
