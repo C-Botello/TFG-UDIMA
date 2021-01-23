@@ -54,7 +54,8 @@ class Register extends Component {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         }
-      }).then(res => res.json())
+      })
+      .then(res => res.json())
       .then( data => {
         if (data === true) {
           this.props.notification("error", "Ya hay una cuenta utilizando esa dirección de correo")

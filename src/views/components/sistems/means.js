@@ -1,26 +1,13 @@
 import React, { Component } from 'react';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import FormLabel from '@material-ui/core/FormLabel';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import Radio from '@material-ui/core/Radio';
-import Paper from '@material-ui/core/Paper';
-import Fade from '@material-ui/core/Fade';
-import { Grow } from '@material-ui/core/';
+import { Card, Fade, Grow } from '@material-ui/core/';
 
-import "../../../public/css/means.css";
-
+//ORGANISMS
 import Faqs from '../organisms/means/faqs';
 import InterestLink from '../organisms/means/interestLink';
 import SymptomsSearch from '../organisms/means/symptomsSearch';
+
+//CSS
+import "../../../public/css/means.css";
 
 class Means extends Component {
   constructor(){
