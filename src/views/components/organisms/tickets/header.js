@@ -14,7 +14,7 @@ class Header extends Component {
         <div className="card-body">
           <div className="mb-n3">
             <div className="row mt-n1 mb-1">
-              <div className="col-4"><Htrigger toggle={this.props.toggle}/></div>
+              <div className="col-4">{this.props.rol == "Usuario"?<Htrigger toggle={this.props.toggle}/>:<div></div>}</div>
               <div className="col-8"><HSearch search={this.props.search} handleChange={this.props.handleChange} handleFilter={this.props.handleFilter}/></div>
             </div>
           </div>

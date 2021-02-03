@@ -147,7 +147,6 @@ class Tickets extends Component {
     fetch('/tickets/ticket')
     .then(res => res.json())
     .then(data => {
-      console.log(data);
       this.setState({tickets: data});
       this.setState({ticketsFilter: data});
     });
@@ -308,7 +307,7 @@ class Tickets extends Component {
               {/* Tickets */}
               <div className={this.state.myTicket.user == undefined? "col":"col-7 d-none d-sm-none d-md-block"}>
                 <div className="card box-shadow mt-4 text-center" style={this.state.width <= 991 && this.state.myTicket.user != undefined ? {maxWidth:"530px"}:null}>
-                  <Header myTicket={this.state.myTicket} toggle={this.toggle} handleChange={this.handleChange} handleFilter={this.handleFilter}/>
+                  <Header myTicket={this.state.myTicket} rol={this.state.user.rol} toggle={this.toggle} handleChange={this.handleChange} handleFilter={this.handleFilter}/>
                   <NewTicket issue={this.state.issue} modal={this.state.modal} speciality={this.state.speciality} description={this.state.description} search={this.state.search} toggle={this.toggle} addTicket={this.addTicket} handleChange={this.handleChange}/>
                   <TableTickets tickets={this.state.ticketsFilter} replies={this.replies} search={this.state.search}  page={this.state.page} setPage={this.setPage} id={this.state.myTicket._id} user={this.state.user} handleTicketStatus={this.handleTicketStatus}/>
                 </div>

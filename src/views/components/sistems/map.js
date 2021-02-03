@@ -71,7 +71,7 @@ class Map extends Component {
       //Procesa y almacena los datos obtenidos del repositorio
       const countriesData = this.handleData(response.data.data);
 
-      //Se almacenan los datos en el estado
+      //Se indica que los datos se han obtenido correctamente o se muestra un mensaje
       this.setState({
         countriesData,
         dataOK: true
@@ -88,7 +88,7 @@ class Map extends Component {
     //Por cada país
     for (const d of data) {
       //Se identifican los datos
-      let country = {
+      let obj = {
         name: d.name,
         code: d.code,
         flag: `https://cdn.staticaly.com/gh/hjnilsson/country-flags/master/svg/${d.code.toLowerCase()}.svg`,
@@ -104,7 +104,7 @@ class Map extends Component {
       this.setState({ totalRecovered: this.state.totalRecovered + d.latest_data.recovered });
 
       //Se utiliza el fichero de coordenadas para identificar con los datos
-      country["coordinates"] = {
+      obj["coordinates"] = {
         latitude:
           coordinates.find(f => f.country_code === d.code) !== undefined ? coordinates.find(f => f.country_code === d.code).latlng[0] : 0,
         longitude:
@@ -112,7 +112,7 @@ class Map extends Component {
       };
 
       //Se añaden los datos procesados
-      countriesData.push(country);
+      countriesData.push(obj);
     }
 
     //Se formatean los valores
